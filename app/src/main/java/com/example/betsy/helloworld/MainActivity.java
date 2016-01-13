@@ -13,10 +13,20 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private int counter = 0;
+    private Button plusButton;
+    private Button minusButton;
+    TextView countTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        plusButton = (Button)findViewById(R.id.plusButton);
+        minusButton = (Button)findViewById(R.id.minusButton);
+        countTextView = (TextView)findViewById(R.id.countTextView);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -31,12 +41,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonOnClick(View v) {
-        // do something when the button is clicked
-        Button button=(Button) v;
-        button.setText("I've Been Clicked!");
-        TextView myTextView=(TextView)
-                findViewById(R.id.textView);
-        myTextView.setText("You Clicked My Button!");
+        if (v == plusButton) {
+            counter++;
+        }
+        countTextView.setText(Integer.toString(counter));
     }
 
     @Override
