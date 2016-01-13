@@ -44,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
         if (v == plusButton) {
             counter++;
         }
+        if (v == minusButton) {
+            counter--;
+        }
         countTextView.setText(Integer.toString(counter));
     }
 
